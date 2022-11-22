@@ -1,7 +1,7 @@
 
   # Hello world
 
-  ![badge](https://img.shields.io/badge/licenseApache License 2.0-orange)</br>
+  ![badge](https://img.shields.io/badge/license-Apache License 2.0-orange)</br>
 
  ## Description
  test to try out making readmes
@@ -28,5 +28,5 @@
 nope
 
 ## Questions
-If you have any questions, reach out at [enigmawoman(https://github.com/enigmawoman)</br>
-Alternativlely, send your questions to slcovell@gmail.com
+If you have any questions, reach out at [enigmawoman](https://github.com/enigmawoman)</br>
+Alternativlely, send your questions to <a href=slcovell@gmail.com>slcovell@gmail.com</a>
