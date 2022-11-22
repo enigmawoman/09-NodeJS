@@ -2,8 +2,6 @@
 
 const inquirer = require('inquirer');
 const fs = require("fs");
-const { title } = require("process");
-const { generate } = require("rxjs");
 const generateMarkdown = require("./utils/generateMarkdown");
 
 // TODO: Create an array of questions for user input
@@ -33,14 +31,32 @@ const questions = [
         name: "license",
         message: "Please choose the approprite license for this project",
         choices: [
-            "None",
-            "Apache License 2.0",
-            "Creative Commons Zero v1.0 Universal",
-            "GNU General Public License v2.0",
-            "MIT License",
-            "Mozilla Public License 2.0"
-        ]
-    },
+            { 
+                name: "None",
+                value: "none",
+            },
+            {
+                name: "Apache License 2.0",
+                value: "ApacheLicense2.0",
+            },
+            {
+                name: "Creative Commons Zero v1.0 Universal",
+                value:"CreativeCommonsZerov1.0Universal",
+            },
+            {
+                name: "GNU General Public License v2.0",
+                value: "GNUGeneralPublicLicensev2.0",
+            },
+            {
+                name: "MIT License",
+                value: "MITLicense",
+            },
+            {
+                name: "Mozilla Public License 2.0",
+                value: "MozillaPublicLicense2.0",
+            },
+        ]},
+
     {
         type: "input",
         name: "contributing",
@@ -66,20 +82,20 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    inquirer
-  .prompt(questions)
   
-    .then((answers) => {
-        const readMe = generateMarkdown(answers);
-        fs.writeFile('README.md', readMe, (err) =>
+        fs.writeFile(fileName, data, (err) =>
     err ? console.log(err) : console.log('Success!'))
-      });
+      };
     
-}
 
 // TODO: Create a function to initialize app
 function init() {
-    writeToFile()
+    inquirer
+    .prompt(questions)
+    .then((answers) => {
+        const readMe = generateMarkdown(answers);
+        writeToFile("README.md", readMe);
+    });    
 }
 
 // Function call to initialize app
