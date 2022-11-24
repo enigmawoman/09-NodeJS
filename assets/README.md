@@ -44,5 +44,5 @@ No tests are included for this project
 
 ## Questions
 
-If you have any questions, reach out at [enigmawoman(https://github.com/enigmawoman)</br>
+If you have any questions, reach out at [@enigmawoman](https://github.com/enigmawoman)</br>
 Alternativlely, send your questions to readme@generator.com
