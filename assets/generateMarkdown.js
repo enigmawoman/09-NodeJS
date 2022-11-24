@@ -21,11 +21,10 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
   if (license !== "None") {
     return `
-    ## License
     
-    This project is written under the ${license} license.`;
+    This project is covered under the ${license} license.`;
   }
-  return '';
+  return 'This project is not covered under a license';
 }
 
 // TODO: Create a function to generate markdown for README
@@ -57,11 +56,12 @@ function generateMarkdown(answers) {
 
  ${answers.usage}
 
+ ## License
  ${renderLicenseSection(answers.license)}
 
  ## Contributing
 
- The following people have contributed to this project:
+ The following people have contributed to this project: \n
  ${answers.contributing}
 
  ## Testing

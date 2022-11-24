@@ -33,7 +33,7 @@ const questions = [
         choices: [
             { 
                 name: "None",
-                value: "none",
+                value: "None",
             },
             {
                 name: "Apache License 2.0",
@@ -94,7 +94,7 @@ function init() {
     .prompt(questions)
     .then((answers) => {
         const readMe = generateMarkdown(answers);
-        writeToFile("README.md", readMe);
+        writeToFile("./assets/README.md", readMe);
     });    
 }
 
